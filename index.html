@@ -33,11 +33,7 @@
     menuToggle.addEventListener('click', () => {
       const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
       menuToggle.setAttribute('aria-expanded', String(!isExpanded));
-      if (primaryMenu.hasAttribute('hidden')) {
-        primaryMenu.removeAttribute('hidden');
-      } else {
-        primaryMenu.setAttribute('hidden', '');
-      }
+      primaryMenu.classList.toggle('visible');
     });
   </script>
 
@@ -45,7 +41,7 @@
     <section id="sobre" class="section about">
       <h1>Bem-vindo ao Desafio Multiarena - Futebol Society</h1>
       <p>
-        Participe dos jogos de futebol society na quadra Multiarena. Nosso objetivo é promover o esporte, a saúde e a integração entre os atletas.
+        Participe dos jogos de futebol society de quadra na  Multiarena. Nosso objetivo é promover o esporte, a saúde e a integração entre os atletas.
       </p>
     </section>
 

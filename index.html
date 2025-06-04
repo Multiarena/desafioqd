@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro Jogos Desafio Multiarena - Futebol Society</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo/logo.png" alt="Multiarena Logo" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#sobre">Sobre a Multiarena</a></li>
+        <li><a href="#contato">Fale Conosco Contato Zap</a></li>
+        <li><a href="#cadastro">Cadastro para Desafios Multiarena</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sobre" class="section about">
+      <h1>Bem-vindo ao Desafio Multiarena - Futebol Society</h1>
+      <p>
+        Participe dos jogos de futebol society na quadra Multiarena. Nosso objetivo é promover o esporte, a saúde e a integração entre os atletas.
+      </p>
+    </section>
+
+    <section id="contato" class="section contact">
+      <h2>Fale Conosco</h2>
+      <p>Contato via WhatsApp: <a href="https://wa.me/556295018101" target="_blank" rel="noopener">(62) 9501-8101</a></p>
+    </section>
+
+    <section id="cadastro" class="section registration">
+      <h2>Cadastro para Jogos Desafio Multiarena</h2>
+      <form id="registrationForm">
+        <div class="form-group">
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" name="nome" required />
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="pai">Nome do Pai</label>
+          <input type="text" id="pai" name="pai" required />
+        </div>
+        <div class="form-group">
+          <label for="mae">Nome da Mãe</label>
+          <input type="text" id="mae" name="mae" required />
+        </div>
+        <div class="form-group">
+          <label for="endereco">Endereço</label>
+          <input type="text" id="endereco" name="endereco" required />
+        </div>
+        <div class="form-group">
+          <label for="telefone">Número de Telefone Celular</label>
+          <input type="tel" id="telefone" name="telefone" pattern="^\+?\d{8,15}$" placeholder="+55 62 9xxxx-xxxx" required />
+        </div>
+
+        <fieldset class="consent-group">
+          <legend>Termos e Condições</legend>
+          <div class="checkbox-group">
+            <input type="checkbox" id="aceite1" name="aceite1" required />
+            <label for="aceite1">
+              Aceito participar dos jogos desafio de futebol de Quadra Society Multiarena, ciente do uso dos equipamentos de proteção e segurança para futebol de quadra, munido de uniformes completos.
+            </label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="aceite2" name="aceite2" required />
+            <label for="aceite2">
+              Estou ciente e permito o uso de imagem no site da Multiarena e nas redes sociais da Multiarena.
+            </label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="aceite3" name="aceite3" required />
+            <label for="aceite3">
+              Comprometo-me a cumprir as regras segundo o técnico do dia.
+            </label>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn-submit">Cadastrar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Multiarena - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const pai = document.getElementById('pai').value.trim();
+      const mae = document.getElementById('mae').value.trim();
+      const endereco = document.getElementById('endereco').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+
+      const aceite1 = document.getElementById('aceite1').checked;
+      const aceite2 = document.getElementById('aceite2').checked;
+      const aceite3 = document.getElementById('aceite3').checked;
+
+      if (!aceite1 || !aceite2 || !aceite3) {
+        alert('Por favor, aceite todos os termos para prosseguir.');
+        return;
+      }
+
+      const message = 
+        `Cadastro para Jogos Desafio Multiarena:%0A` +
+        `Nome: ${nome}%0A` +
+        `E-mail: ${email}%0A` +
+        `Pai: ${pai}%0A` +
+        `Mãe: ${mae}%0A` +
+        `Endereço: ${endereco}%0A` +
+        `Telefone: ${telefone}%0A%0A` +
+        `Aceite:%0A` +
+        `- Participar dos jogos desafio de futebol de Quadra Society Multiarena, ciente do uso dos equipamentos de proteção e segurança para futebol de quadra, munido de uniformes completos.%0A` +
+        `- Permitir o uso de imagem no site da Multiarena e nas redes sociais da Multiarena.%0A` +
+        `- Cumprir as regras segundo o técnico do dia.%0A%0A` +
+        `Eu aceito.`;
+
+      const phoneNumber = '556295018101';
+      const url = `https://wa.me/${phoneNumber}?text=${message}`;
+
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>

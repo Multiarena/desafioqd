@@ -14,28 +14,7 @@
     <div class="logo-container">
       <img src="logo/logo.png" alt="Multiarena Logo" class="logo-centered" />
     </div>
-    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
-      &#9776;
-    </button>
-    <nav class="navbar" id="primary-menu" hidden>
-      <ul class="nav-links">
-        <li><a href="#sobre">Sobre a Multiarena</a></li>
-        <li><a href="#contato">Fale Conosco Contato Zap</a></li>
-        <li><a href="#cadastro">Cadastro para Desafios Multiarena</a></li>
-      </ul>
-    </nav>
   </header>
-
-  <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const primaryMenu = document.getElementById('primary-menu');
-
-    menuToggle.addEventListener('click', () => {
-      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', String(!isExpanded));
-      primaryMenu.classList.toggle('visible');
-    });
-  </script>
 
   <main>
     <section id="sobre" class="section about">
@@ -106,6 +85,13 @@
   </main>
 
   <footer>
+    <nav class="navbar-footer">
+      <ul class="nav-links">
+        <li><a href="#sobre">Sobre a Multiarena</a></li>
+        <li><a href="#contato">Fale Conosco Contato Zap</a></li>
+        <li><a href="#cadastro">Cadastro para Desafios Multiarena</a></li>
+      </ul>
+    </nav>
     <p>© 2024 Multiarena - Todos os direitos reservados.</p>
   </footer>
 

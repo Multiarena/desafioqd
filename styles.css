@@ -220,3 +220,36 @@ input[type="tel"]:focus {
     padding: 0.75rem 1rem;
   }
 }
+
+.navbar-footer {
+  background-color: #004d40;
+  padding: 1rem 2rem;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-footer .nav-links {
+  justify-content: center;
+  gap: 2rem;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.navbar-footer .nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-footer .nav-links li a:hover,
+.navbar-footer .nav-links li a:focus {
+  color: #ff6f00;
+  outline: none;
+}
